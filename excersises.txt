@@ -1,0 +1,46 @@
+Ejercicio 1:
+
+Utilizando el lenguaje de programación que prefiera desarrollar una aplicación que permita visualizar la información disponible en https://rickandmortyapi.com/documentation/#rest
+
+Requerimientos:
+
+Ejercicio 1:
+
+1- Listado de personajes: Debe mostrar el nombre del personaje con un link a su detalle, la imagen
+
+2- El listado debe permitir paginar
+
+3- Detalle del personaje, debe mostrar la mayor cantidad de información disponible para el personaje.
+
+Ejercicio 2:
+
+1- Recorrer el archivo json 1 (trasladar el contenido a una variable) verificando si el registro existe en el json2.
+
+2- Para determinar si el registro existe se debe considerar igualdad en los tags #idpersona y fecha
+
+3- En caso de que el registro exista quitar el mismo del archivo resultado.
+
+4- Simplificar el archivo resultado para que sea un archivo json que tenga la siguiente estructura {“data”: [elemento1, elemento2, …, elemento n]}
+
+
+Elemento = "#idpaciente": "233122",
+
+  "#tipo": "1",
+
+  "#tipoDemanda": "4",
+
+  "#ubicacionRequerida": "1",
+
+  "cama": "",
+
+  "cobertura": "ACA SALUD COOP. PREST.S.MED.ASIS.",
+
+  "fecha": "2022-09-13",
+
+  "hce": "229369",
+
+  "medico": " ",
+
+  "observacion": "AC 22/8 PARA 13/9",
+
+  "paciente": "RAMIREZ JOSE RICARDO"}
