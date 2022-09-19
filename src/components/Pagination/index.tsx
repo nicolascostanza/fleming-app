@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./styles.module.css";
 
 type Props = {
   onPrevious: () => void;
@@ -14,10 +15,14 @@ const Pagination: React.FC<Props> = ({
   nextPage,
 }) => {
   return (
-    <>
-      <button disabled={!previousPage} onClick={onPrevious}>Anterior</button>
-      <button disabled={!nextPage} onClick={onNext}>Siguiente</button>
-    </>
+    <div className={styles.container}>
+      <button className={styles.btn} disabled={!previousPage} onClick={onPrevious}>
+        Anterior
+      </button>
+      <button className={styles.btn} disabled={!nextPage} onClick={onNext}>
+        Siguiente
+      </button>
+    </div>
   );
 };
 

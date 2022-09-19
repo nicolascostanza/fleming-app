@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "../css/ejercicio1.module.css";
 import CharacterList from "../components/Lists/CharacterList";
 import EpisodeList from "../components/Lists/EpisodeList";
 import LocationList from "../components/Lists/LocationList";
@@ -71,11 +72,11 @@ const RickAndMorty = () => {
   };
 
   return (
-    <>
-      <nav>
-        <button onClick={() => setTab("CharacterList")}>Personajes</button>
-        <button onClick={() => setTab("LocationList")}>Lugares</button>
-        <button onClick={() => setTab("EpisodeList")}>Episodios</button>
+    <div className={styles.container}>
+      <nav className={styles.navBarFilter}>
+        <button className={styles.btnScreen} onClick={() => setTab("CharacterList")}>Personajes</button>
+        <button className={styles.btnScreen} onClick={() => setTab("LocationList")}>Lugares</button>
+        <button className={styles.btnScreen} onClick={() => setTab("EpisodeList")}>Episodios</button>
       </nav>
       <main>
         <Pagination
@@ -88,7 +89,7 @@ const RickAndMorty = () => {
         {tab === "LocationList" && <LocationList data={locations} />}
         {tab === "EpisodeList" && <EpisodeList data={episodes} />}
       </main>
-    </>
+    </div>
   );
 };
 
