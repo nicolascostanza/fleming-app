@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState, useEffect } from "react";
 import styles from "../css/ejercicio1.module.css";
 import CharacterList from "../components/Lists/CharacterList";
@@ -55,28 +56,44 @@ const RickAndMorty = () => {
   };
 
   useEffect(() => {
-    getCharacters();
-    // getLocations();
-    // getEpisodes();
-  }, []);
+    if (tab === "CharacterList") {
+      getCharacters();
+    }
+    if (tab === "LocationList") {
+      getLocations();
+    }
+    if (tab === "EpisodeList") {
+      getEpisodes();
+    }
+  }, [tab]);
 
   const onPrevious = () => {
-    getCharacters(infoApi.prev ? infoApi.prev : undefined);
-    getLocations(infoApi.prev ? infoApi.prev : undefined);
-    getEpisodes(infoApi.prev ? infoApi.prev : undefined);
+    if (infoApi.prev) {
+      getCharacters(infoApi.prev);
+      getLocations(infoApi.prev);
+      getEpisodes(infoApi.prev);
+    }
   };
   const onNext = () => {
-    getCharacters(infoApi.next ? infoApi.next : undefined);
-    getLocations(infoApi.next ? infoApi.next : undefined);
-    getEpisodes(infoApi.next ? infoApi.next : undefined);
+    if (infoApi.next) {
+      getCharacters(infoApi.next);
+      getLocations(infoApi.next);
+      getEpisodes(infoApi.next);
+    }
   };
 
   return (
     <div className={styles.container}>
       <nav className={styles.navBarFilter}>
-        <button className={styles.btnScreen} onClick={() => setTab("CharacterList")}>Personajes</button>
-        <button className={styles.btnScreen} onClick={() => setTab("LocationList")}>Lugares</button>
-        <button className={styles.btnScreen} onClick={() => setTab("EpisodeList")}>Episodios</button>
+        <a className={styles.filtro} onClick={() => setTab("CharacterList")}>
+          Personajes
+        </a>
+        <a className={styles.filtro} onClick={() => setTab("LocationList")}>
+          Lugares
+        </a>
+        <a className={styles.filtro} onClick={() => setTab("EpisodeList")}>
+          Episodios
+        </a>
       </nav>
       <main>
         <Pagination
@@ -84,10 +101,18 @@ const RickAndMorty = () => {
           onPrevious={onPrevious}
           previousPage={infoApi.prev}
           nextPage={infoApi.next}
+          pages={infoApi.pages}
         />
         {tab === "CharacterList" && <CharacterList data={characters} />}
         {tab === "LocationList" && <LocationList data={locations} />}
         {tab === "EpisodeList" && <EpisodeList data={episodes} />}
+        <Pagination
+          onNext={onNext}
+          onPrevious={onPrevious}
+          previousPage={infoApi.prev}
+          nextPage={infoApi.next}
+          pages={infoApi.pages}
+        />
       </main>
     </div>
   );

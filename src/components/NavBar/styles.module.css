@@ -12,6 +12,10 @@
   color: white;
   font-family: sans-serif;
   font-size: 16px;
+  padding: 10px;
+  border: transparent;
+  transform: scale(1);
+  transition: 0.5s;
 }
 .btn:hover {
   transform: scale(1.1);
@@ -21,4 +25,12 @@
   background-color: grey;
   cursor: auto;
   transform: scale(1);
+}
+@media (max-width: 599px) {
+  .btn {
+    font-size: 14px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+  }
 }

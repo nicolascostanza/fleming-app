@@ -20,22 +20,22 @@ export interface Character {
 }
 
 export interface Location {
-  created: string,
-  dimension: string,
-  id: number,
-  name: string,
-  residents: string[],
-  type: string,
-  url: string
+  created: string;
+  dimension: string;
+  id: number;
+  name: string;
+  residents: string[];
+  type: string;
+  url: string;
 }
 
 export interface Episode {
-  air_date: string,
-  characters: string[],
-  created: string,
-  id: number,
-  name: string,
-  episode: string
+  air_date: string;
+  characters: string[];
+  created: string;
+  id: number;
+  name: string;
+  episode: string;
 }
 
 export interface InfoApi {

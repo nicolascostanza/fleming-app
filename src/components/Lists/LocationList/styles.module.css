@@ -1,0 +1,76 @@
+.container {
+  width: 90%;
+  margin: 20px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.card {
+  height: auto;
+  min-height: 350px;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #a3c5f1;
+  border-radius: 4px;
+  color: #106ce1;
+  padding: 0 15px;
+  margin: 10px 30px;
+}
+.title {
+  color: #106ce1;
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+.subtitle{
+  width: 100%;
+  min-height: 150px;
+  border-bottom: 1px solid #364D61;
+}
+.informationBoxCard{
+  height: 100%;
+}
+.text{
+  padding: 10px 0;
+}
+
+@media (max-width: 959px) {
+  .container {
+    width: 90%;
+    margin: 20px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    gap: 30px;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(1, 90%);
+    align-items: center;
+    padding-bottom: 20px;
+    margin: 10px auto;
+  }
+  .card{
+    display: block;
+    width: 90%;
+    min-height: 0;
+  }
+  .subtitle{
+    font-size: 20px;
+    min-height: 0;
+    padding: 10px 0;
+  }
+}

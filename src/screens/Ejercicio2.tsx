@@ -1,6 +1,6 @@
 import json1 from "../json/Json1.json";
 import json2 from "../json/json2.json";
-import styles from '../css/ejercicio2.module.css';
+import styles from "../css/ejercicio2.module.css";
 
 const Ejercicio2 = () => {
   // inicializo el array a trabajar
@@ -37,18 +37,24 @@ const Ejercicio2 = () => {
   return (
     <div className={styles.container}>
       {arrayATrabajar?.map((paciente) => (
-        <div key={paciente["#idpaciente"]}>
-          <p>{`ID del paciente ${paciente["#idpaciente"]}`}</p>
-          <p>{`Paciente ${paciente.paciente}`}</p>
-          <p>{`Tipo ${paciente["#tipo"]}`}</p>
-          <p>{`Tipo de demanda ${paciente["#tipoDemanda"]}`}</p>
-          <p>{`Ubicacion requerida ${paciente["#ubicacionRequerida"]}`}</p>
-          <p>{`Cama ${paciente.cama}`}</p>
-          <p>{`Cobertura ${paciente.cobertura}`}</p>
-          <p>{`Fecha ${paciente.fecha}`}</p>
-          <p>{`Hce ${paciente.hce}`}</p>
-          <p>{`Medico ${paciente.medico}`}</p>
-          <p>{`Observacion ${paciente.observacion}`}</p>
+        <div className={styles.card} key={paciente["#idpaciente"]}>
+          <p className={styles.text}>
+            {`ID del paciente ${paciente["#idpaciente"]}`}
+          </p>
+          <p className={styles.text}>{`Paciente ${paciente.paciente}`}</p>
+          <p className={styles.text}>{`Tipo ${paciente["#tipo"]}`}</p>
+          <p
+            className={styles.text}
+          >{`Tipo de demanda ${paciente["#tipoDemanda"]}`}</p>
+          <p
+            className={styles.text}
+          >{`Ubicacion requerida ${paciente["#ubicacionRequerida"]}`}</p>
+          <p className={styles.text}>{`Cama ${paciente.cama}`}</p>
+          <p className={styles.text}>{`Cobertura ${paciente.cobertura}`}</p>
+          <p className={styles.text}>{`Fecha ${paciente.fecha}`}</p>
+          <p className={styles.text}>{`Hce ${paciente.hce}`}</p>
+          <p className={styles.text}>{`Medico ${paciente.medico}`}</p>
+          <p className={styles.text}>{`Observacion ${paciente.observacion}`}</p>
         </div>
       ))}
     </div>

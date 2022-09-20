@@ -1,5 +1,6 @@
 import React from "react";
 import { Location } from "../../../helpers/types";
+import styles from "./styles.module.css";
 
 type Props = {
   data: Location[];
@@ -16,18 +17,22 @@ const LocationList: React.FC<Props> = ({ data }) => {
     return date;
   });
   return (
-    <div>
-      {data.map((location, index) => (
-        <div>
-          <h1>{`Nombre ${location.name}`}</h1>
-          <h3>{`Dimension ${location.dimension}`}</h3>
-          <h3>{`Creada ${dataFormatted[index]}`}</h3>
-          <h3>{`Tipo ${location.type}`}</h3>
-          <h4>aca hacemos un deslizable con los personajes</h4>
-          {/* <h3>{`Residentes ${location.type}`}</h3> */}
-        </div>
-      ))}
-    </div>
+    <>
+      <h1 className={styles.title}>Lugares</h1>
+      <div className={styles.container}>
+        {data.map((location, index) => (
+          <div key={index} className={styles.card}>
+            <h1 className={styles.subtitle}>{`${location.name}`}</h1>
+            <div className={styles.informationBoxCard}>
+              <p className={styles.text}>{`Dimension ${location.dimension}`}</p>
+              <p className={styles.text}>{`Creada ${dataFormatted[index]}`}</p>
+              <p className={styles.text}>{`Tipo ${location.type}`}</p>
+              <p className={styles.text}>{`Cantidad de residentes ${location.residents?.length}`}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

@@ -16,7 +16,7 @@ const NavBar: React.FC<Props> = ({ onView, screen }) => {
           onView();
         }}
       >
-        Excersice 1
+        Ejercicio 1
       </button>
       <button
         className={styles.btn}
@@ -25,7 +25,7 @@ const NavBar: React.FC<Props> = ({ onView, screen }) => {
           onView();
         }}
       >
-        Excersice 2
+        Ejercicio 2
       </button>
     </nav>
   );

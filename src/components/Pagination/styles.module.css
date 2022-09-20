@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   height: 50px;
 }
 .btn {
@@ -11,6 +12,15 @@
   color: white;
   font-family: sans-serif;
   font-size: 16px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border: transparent;
+  transform: scale(1);
+  transition: 0.5s;
+  width: 15%;
+  display: flex;
+  justify-content: center;
 }
 .btn:hover {
   transform: scale(1.1);
@@ -21,4 +31,24 @@
   cursor: auto;
   transform: scale(1);
   transition: 0.5s;
+}
+.textPage{
+  text-align: center;
+  color: #106ce1;
+}
+
+@media (max-width: 959px) {
+  .btn{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 599px) {
+  .btn {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+  }
 }

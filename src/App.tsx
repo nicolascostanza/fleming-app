@@ -5,8 +5,7 @@ import RickAndMorty from "./screens/RickAndMorty";
 import Ejercicio2 from "./screens/Ejercicio2";
 
 function App() {
-  // cambiar a true despues para que inicie ne la pantalla del ejercicio 1
-  const [screen, setScreen] = useState<boolean>(false);
+  const [screen, setScreen] = useState<boolean>(true);
   const ChangeView = () => {
     setScreen(!screen);
   };

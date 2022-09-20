@@ -1,22 +1,40 @@
-.container{
-  background-color: #CFDFED;
+.container {
+  background-color: #cfdfed;
 }
-.navBarFilter{
+.navBarFilter {
   height: 60px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5%;
-  background-color: #1985E3;
+  background-color: #1985e3;
 }
-
-.btnScreen{
+.filtro {
   padding: 10px;
   margin: 10px;
   cursor: pointer;
   border-radius: 10px;
   font-family: sans-serif;
   font-size: 16px;
-  background-color: #364d61;
   color: white;
+  transform: scale(1);
+  transition: 0.5s;
+}
+.filtro:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+@media (max-width: 959px) {
+  .filtro {
+    font-size: 14px;
+  }
 }
 
+@media (max-width: 599px) {
+  .filtro {
+    width: auto;
+    font-size: 14px;
+    padding: 0 3px;
+    margin: 0;
+  }
+}
