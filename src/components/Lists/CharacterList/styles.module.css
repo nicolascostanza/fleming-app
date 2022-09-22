@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 90%;
   margin: 20px auto 0 auto;
   display: grid;
@@ -8,7 +8,7 @@
   align-items: center;
   padding-bottom: 20px;
 }
-.card{
+.card {
   height: auto;
   min-height: 400px;
   width: 100%;
@@ -20,9 +20,9 @@
   align-items: center;
   background-color: #a3c5f1;
   border-radius: 4px;
-  color: #106CE1;
+  color: #106ce1;
 }
-.imagenCaracter{
+.imagenCaracter {
   width: 80%;
   height: 80%;
   cursor: pointer;
@@ -30,28 +30,28 @@
   transition: 0.5s;
   object-fit: contain;
 }
-.imagenCaracter:hover{
+.imagenCaracter:hover {
   cursor: pointer;
   transform: scale(1.05);
   transition: 0.5s;
   object-fit: contain;
 }
-.titleCard{
+.titleCard {
   text-align: center;
 }
-.modal{
+.modal {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0,0,0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.cardModal{
+.cardModal {
   height: auto;
   min-height: 470px;
   padding: 20px 0;
@@ -60,30 +60,30 @@
   border-radius: 4px;
   text-align: center;
 }
-.headerModal{
+.headerModal {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.title{
+.title {
   width: auto;
-  color: #106CE1;
+  color: #106ce1;
   font-family: sans-serif;
   font-size: 24px;
   margin: 0;
   padding-left: 20px;
 }
-.equis{
+.equis {
   padding-right: 15px;
-  color: #106CE1;
+  color: #106ce1;
   font-size: 24px;
 }
-.imagenDetails{
+.imagenDetails {
   margin: 0 auto;
   width: 80px;
   height: 80px;
 }
-.boxDetail{
+.boxDetail {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -92,15 +92,15 @@
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 700;
-  color: #106CE1;
+  color: #106ce1;
 }
-.lastTextBox{
+.lastTextBox {
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 700;
-  color: #106CE1;
+  color: #106ce1;
 }
-.exit{
+.exit {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -108,12 +108,20 @@
   padding: 5px;
   font-size: larger;
 }
-.headingTitle{
-  color: #106CE1;
+.headingTitle {
+  color: #106ce1;
   font-family: sans-serif;
   font-size: 40px;
   font-weight: 700;
   text-align: center;
+}
+.selectEpisodes {
+  background-color: #a3c5f1;
+  color: #106ce1;
+  outline: none;
+  border: none;
+  width: 15%;
+  margin: 0 auto;
 }
 
 @media (max-width: 959px) {
@@ -138,20 +146,20 @@
     padding-bottom: 20px;
     margin: 10px auto;
   }
-  .card{
+  .card {
     height: auto;
     min-height: 0;
     align-items: center;
     min-height: 0;
   }
-  .imagenCaracter{
+  .imagenCaracter {
     width: 100%;
     margin: 0 auto;
   }
-  .titleCard{
+  .titleCard {
     padding: 10px;
   }
-  .cardModal{
+  .cardModal {
     min-height: 470px;
     width: 80%;
   }

@@ -7,7 +7,6 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-// cambiarle el grid para tables y para mobile, hacerlo totalmente responsive
 root.render(
   <React.StrictMode>
     <App />

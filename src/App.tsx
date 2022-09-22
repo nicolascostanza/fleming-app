@@ -6,7 +6,7 @@ import Ejercicio2 from "./screens/Ejercicio2";
 
 function App() {
   const [screen, setScreen] = useState<boolean>(true);
-  const ChangeView = () => {
+  const ChangeView = (): void => {
     setScreen(!screen);
   };
 

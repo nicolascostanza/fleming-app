@@ -1,26 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Character } from "../../../helpers/types";
 import styles from "./styles.module.css";
 
 type Props = {
-  data: Character[];
+  dataCaracteres: Character[];
 };
 
-const CharacterList: React.FC<Props> = ({ data }) => {
+const CharacterList: React.FC<Props> = ({ dataCaracteres }) => {
   const [showDetails, setShowDetails] = useState<boolean>(false);
   const [characterSelected, setCharacterSelected] = useState<Character | any>(
     {}
   );
+  const [list, setList] = useState<any>([]);
 
-  let listaEpisodiosPorPersonaje: any = data?.map((elemento) => {
-    if (Array.isArray(elemento.episode)) {
-      elemento?.episode?.map((elementosArr) => {
-        return elementosArr.split("/")[5];
-      });
+  useEffect(() => {
+    if(Array.isArray(dataCaracteres[0]?.episode)){
+      setList(
+        dataCaracteres?.map((elemento) => {
+          return elemento.episode.map((elem) => elem.split('/')[5])
+        })
+      );
+    }else{
+      setList([])
     }
-  });
+  }, [dataCaracteres]);
 
-  const FormatterData = (date: string) => {
+  const FormatterdataCaracteres = (date: string) => {
     const dateFormatted = new Date(date).toLocaleDateString("en-us", {
       weekday: "long",
       year: "numeric",
@@ -39,7 +44,7 @@ const CharacterList: React.FC<Props> = ({ data }) => {
     <>
       <h1 className={styles.headingTitle}>Personajes</h1>
       <div className={styles.container}>
-        {data.map((caracter) => {
+        {dataCaracteres.map((caracter) => {
           return (
             <div key={caracter.id} className={styles.card}>
               <h2 className={styles.titleCard}>{caracter.name}</h2>
@@ -76,7 +81,7 @@ const CharacterList: React.FC<Props> = ({ data }) => {
                 <p>{`Tipo ${characterSelected.type}`}</p>
                 <p>{`Especie ${characterSelected.species}`}</p>
                 <p>{`Estado ${characterSelected.status}`}</p>
-                {FormatterData(characterSelected.created)}
+                {FormatterdataCaracteres(characterSelected.created)}
                 <p>{`Genero ${characterSelected.gender}`}</p>
                 <p>{`Origen ${characterSelected.origin?.name}`}</p>
                 <p>{`Location ${characterSelected.location?.name}`}</p>
@@ -84,12 +89,10 @@ const CharacterList: React.FC<Props> = ({ data }) => {
                   className={styles.lastTextBox}
                 >{`Cantidad de episodios ${characterSelected.episode.length}`}</p>
                 <p>Numero de episodios</p>
-                <select>
-                  {listaEpisodiosPorPersonaje[characterSelected.id - 1]?.map(
-                    (caract: string) => {
-                      return <option>{caract}</option>;
-                    }
-                  )}
+                <select className={styles.selectEpisodes}>
+                  {list[characterSelected.id - 1]?.map((caract: string, index:number) => {
+                    return <option key={index}>{caract}</option>;
+                  })}
                 </select>
               </div>
             </section>
