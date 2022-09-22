@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fleming-app/static/css/main.49680b0d.css",
-    "main.js": "/fleming-app/static/js/main.f375055c.js",
+    "main.css": "/fleming-app/static/css/main.0cecf9c6.css",
+    "main.js": "/fleming-app/static/js/main.3b40b321.js",
     "index.html": "/fleming-app/index.html",
-    "main.49680b0d.css.map": "/fleming-app/static/css/main.49680b0d.css.map",
-    "main.f375055c.js.map": "/fleming-app/static/js/main.f375055c.js.map"
+    "main.0cecf9c6.css.map": "/fleming-app/static/css/main.0cecf9c6.css.map",
+    "main.3b40b321.js.map": "/fleming-app/static/js/main.3b40b321.js.map"
   },
   "entrypoints": [
-    "static/css/main.49680b0d.css",
-    "static/js/main.f375055c.js"
+    "static/css/main.0cecf9c6.css",
+    "static/js/main.3b40b321.js"
   ]
 }
