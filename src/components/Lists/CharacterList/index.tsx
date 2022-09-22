@@ -12,6 +12,14 @@ const CharacterList: React.FC<Props> = ({ data }) => {
     {}
   );
 
+  let listaEpisodiosPorPersonaje: any = data?.map((elemento) => {
+    if (Array.isArray(elemento.episode)) {
+      elemento?.episode?.map((elementosArr) => {
+        return elementosArr.split("/")[5];
+      });
+    }
+  });
+
   const FormatterData = (date: string) => {
     const dateFormatted = new Date(date).toLocaleDateString("en-us", {
       weekday: "long",
@@ -26,6 +34,7 @@ const CharacterList: React.FC<Props> = ({ data }) => {
     setShowDetails(true);
     setCharacterSelected(caracter);
   };
+
   return (
     <>
       <h1 className={styles.headingTitle}>Personajes</h1>
@@ -74,6 +83,14 @@ const CharacterList: React.FC<Props> = ({ data }) => {
                 <p
                   className={styles.lastTextBox}
                 >{`Cantidad de episodios ${characterSelected.episode.length}`}</p>
+                <p>Numero de episodios</p>
+                <select>
+                  {listaEpisodiosPorPersonaje[characterSelected.id - 1]?.map(
+                    (caract: string) => {
+                      return <option>{caract}</option>;
+                    }
+                  )}
+                </select>
               </div>
             </section>
           </div>

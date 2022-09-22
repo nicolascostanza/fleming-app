@@ -19,6 +19,7 @@ const RickAndMorty = () => {
   const [episodes, setEpisodes] = useState<Episode[]>([]);
   const [infoApi, setInfoApi] = useState<InfoApi>(initValues);
   const [tab, setTab] = useState<string>("CharacterList");
+  const [loading, setLoading] = useState(true);
 
   const getCharacters = (
     url: string = "https://rickandmortyapi.com/api/character"
@@ -65,6 +66,7 @@ const RickAndMorty = () => {
     if (tab === "EpisodeList") {
       getEpisodes();
     }
+    setLoading(false)
   }, [tab]);
 
   const onPrevious = () => {
@@ -103,9 +105,11 @@ const RickAndMorty = () => {
           nextPage={infoApi.next}
           pages={infoApi.pages}
         />
+
         {tab === "CharacterList" && <CharacterList data={characters} />}
         {tab === "LocationList" && <LocationList data={locations} />}
         {tab === "EpisodeList" && <EpisodeList data={episodes} />}
+
         <Pagination
           onNext={onNext}
           onPrevious={onPrevious}
