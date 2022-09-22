@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fleming-app/static/css/main.49680b0d.css",
+    "main.js": "/fleming-app/static/js/main.267d79ac.js",
+    "index.html": "/fleming-app/index.html",
+    "main.49680b0d.css.map": "/fleming-app/static/css/main.49680b0d.css.map",
+    "main.267d79ac.js.map": "/fleming-app/static/js/main.267d79ac.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49680b0d.css",
+    "static/js/main.267d79ac.js"
+  ]
+}
