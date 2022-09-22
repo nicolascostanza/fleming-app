@@ -102,7 +102,7 @@ const RickAndMorty = () => {
           nextPage={infoApi.next}
           pages={infoApi.pages}
         />
-        {tab === "CharacterList" && <CharacterList dataCaracteres={characters} />}
+        {tab === "CharacterList" && <CharacterList dataCaracteres={characters} nextPage={infoApi.next} />}
         {tab === "LocationList" && <LocationList data={locations} />}
         {tab === "EpisodeList" && <EpisodeList data={episodes} />}
         <Pagination

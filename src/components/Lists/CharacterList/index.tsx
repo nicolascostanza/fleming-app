@@ -4,27 +4,31 @@ import styles from "./styles.module.css";
 
 type Props = {
   dataCaracteres: Character[];
+  nextPage: string | null;
 };
 
-const CharacterList: React.FC<Props> = ({ dataCaracteres }) => {
+const CharacterList: React.FC<Props> = ({ dataCaracteres, nextPage }) => {
   const [showDetails, setShowDetails] = useState<boolean>(false);
   const [characterSelected, setCharacterSelected] = useState<Character | any>(
     {}
   );
   const [list, setList] = useState<any>([]);
+  const [indice, setIndice] = useState(2);
 
   useEffect(() => {
-    if(Array.isArray(dataCaracteres[0]?.episode)){
+    if (Array.isArray(dataCaracteres[0]?.episode)) {
       setList(
         dataCaracteres?.map((elemento) => {
-          return elemento.episode.map((elem) => elem.split('/')[5])
+          return elemento.episode.map((elem) => elem.split("/")[5]);
         })
       );
-    }else{
-      setList([])
     }
-  }, [dataCaracteres]);
-
+    if (nextPage !== null) {
+      setIndice(parseInt(nextPage?.split("=")[1]) - 2);
+    } else {
+      setIndice((prev: any) => prev + 1);
+    }
+  }, [dataCaracteres, characterSelected]);
   const FormatterdataCaracteres = (date: string) => {
     const dateFormatted = new Date(date).toLocaleDateString("en-us", {
       weekday: "long",
@@ -90,9 +94,11 @@ const CharacterList: React.FC<Props> = ({ dataCaracteres }) => {
                 >{`Cantidad de episodios ${characterSelected.episode.length}`}</p>
                 <p>Numero de episodios</p>
                 <select className={styles.selectEpisodes}>
-                  {list[characterSelected.id - 1]?.map((caract: string, index:number) => {
-                    return <option key={index}>{caract}</option>;
-                  })}
+                  {list[characterSelected.id - (indice * 20) - 1]?.map(
+                    (caract: string, index: number) => {
+                      return <option key={index}>{caract}</option>;
+                    }
+                  )}
                 </select>
               </div>
             </section>
